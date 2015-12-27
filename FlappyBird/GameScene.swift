@@ -12,6 +12,8 @@ class GameScene: SKScene {
     
     var bird = SKSpriteNode()
     var bg = SKSpriteNode()
+    var pipe1 = SKSpriteNode()
+    var pipe2 = SKSpriteNode()
     
     override func didMoveToView(view: SKView) {
         
@@ -23,13 +25,11 @@ class GameScene: SKScene {
         let animateBg = SKAction.repeatActionForever(SKAction.sequence([moveBg, replaceBg]))
         
         for var i: CGFloat = 0; i<3; i++ {
-            
             bg = SKSpriteNode(texture: bgTexture)
             bg.position = CGPoint(x: bgTexture.size().width/2 + bgTexture.size().width * i, y: CGRectGetMidY(self.frame))
             bg.size.height = self.frame.height
             bg.runAction(animateBg)
             self.addChild(bg)
-            
         }
         
         //Animate Bird
@@ -41,12 +41,37 @@ class GameScene: SKScene {
         bird = SKSpriteNode(texture: birdTexture)
         bird.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         bird.runAction(makeBirdFlap)
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: birdTexture.size().height/2)
+        bird.physicsBody!.dynamic = true
         self.addChild(bird)
+        
+        let ground = SKNode()
+        ground.position = CGPointMake(0, 0)
+        ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 1))
+        ground.physicsBody!.dynamic = false
+        self.addChild(ground)
+        
+        //Pipe
+        var pipeTexture1 = SKTexture(imageNamed: "img/pipe1.png")
+        var pipe1 = SKSpriteNode(texture: pipeTexture1)
+        pipe1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) + 1000)
+        
+        self.addChild(pipe1)
+        
+        var pipeTexture2 = SKTexture(imageNamed: "img/pipe2.png")
+        var pipe2 = SKSpriteNode(texture: pipeTexture2)
+        pipe2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 1000)
+        
+        self.addChild(pipe2)
+        
     
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     
+        bird.physicsBody!.velocity = CGVectorMake(0, 0)
+        bird.physicsBody!.applyImpulse(CGVectorMake(0, 80))
+        
           
     }
    
