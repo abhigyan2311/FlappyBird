@@ -17,11 +17,11 @@
 		00720E961C2F13E400F9C0B0 /* FlappyBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00720E951C2F13E400F9C0B0 /* FlappyBirdTests.swift */; };
 		00720EA11C2F13E400F9C0B0 /* FlappyBirdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00720EA01C2F13E400F9C0B0 /* FlappyBirdUITests.swift */; };
 		00720EB11C30322D00F9C0B0 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 00720EB01C30322D00F9C0B0 /* img */; };
-		00BE9EAF1C53C3D900AB41D7 /* sfx_die.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAA1C53C3D900AB41D7 /* sfx_die.wav */; };
-		00BE9EB01C53C3D900AB41D7 /* sfx_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAB1C53C3D900AB41D7 /* sfx_hit.wav */; };
-		00BE9EB11C53C3D900AB41D7 /* sfx_point.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAC1C53C3D900AB41D7 /* sfx_point.wav */; };
-		00BE9EB21C53C3D900AB41D7 /* sfx_swooshing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAD1C53C3D900AB41D7 /* sfx_swooshing.wav */; };
-		00BE9EB31C53C3D900AB41D7 /* sfx_wing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAE1C53C3D900AB41D7 /* sfx_wing.wav */; };
+		00BE9EB91C53C5B600AB41D7 /* sfx_wing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EB41C53C5B600AB41D7 /* sfx_wing.caf */; };
+		00BE9EBA1C53C5B600AB41D7 /* sfx_swoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EB51C53C5B600AB41D7 /* sfx_swoosh.caf */; };
+		00BE9EBB1C53C5B600AB41D7 /* sfx_point.caf in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EB61C53C5B600AB41D7 /* sfx_point.caf */; };
+		00BE9EBC1C53C5B600AB41D7 /* sfx_hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EB71C53C5B600AB41D7 /* sfx_hit.caf */; };
+		00BE9EBD1C53C5B600AB41D7 /* sfx_die.caf in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EB81C53C5B600AB41D7 /* sfx_die.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +58,11 @@
 		00720EA01C2F13E400F9C0B0 /* FlappyBirdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyBirdUITests.swift; sourceTree = "<group>"; };
 		00720EA21C2F13E400F9C0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00720EB01C30322D00F9C0B0 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
-		00BE9EAA1C53C3D900AB41D7 /* sfx_die.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_die.wav; sourceTree = "<group>"; };
-		00BE9EAB1C53C3D900AB41D7 /* sfx_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_hit.wav; sourceTree = "<group>"; };
-		00BE9EAC1C53C3D900AB41D7 /* sfx_point.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_point.wav; sourceTree = "<group>"; };
-		00BE9EAD1C53C3D900AB41D7 /* sfx_swooshing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_swooshing.wav; sourceTree = "<group>"; };
-		00BE9EAE1C53C3D900AB41D7 /* sfx_wing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_wing.wav; sourceTree = "<group>"; };
+		00BE9EB41C53C5B600AB41D7 /* sfx_wing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_wing.caf; sourceTree = "<group>"; };
+		00BE9EB51C53C5B600AB41D7 /* sfx_swoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swoosh.caf; sourceTree = "<group>"; };
+		00BE9EB61C53C5B600AB41D7 /* sfx_point.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_point.caf; sourceTree = "<group>"; };
+		00BE9EB71C53C5B600AB41D7 /* sfx_hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_hit.caf; sourceTree = "<group>"; };
+		00BE9EB81C53C5B600AB41D7 /* sfx_die.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_die.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,11 +148,11 @@
 		00BE9E9F1C53C08D00AB41D7 /* sfx */ = {
 			isa = PBXGroup;
 			children = (
-				00BE9EAA1C53C3D900AB41D7 /* sfx_die.wav */,
-				00BE9EAB1C53C3D900AB41D7 /* sfx_hit.wav */,
-				00BE9EAC1C53C3D900AB41D7 /* sfx_point.wav */,
-				00BE9EAD1C53C3D900AB41D7 /* sfx_swooshing.wav */,
-				00BE9EAE1C53C3D900AB41D7 /* sfx_wing.wav */,
+				00BE9EB41C53C5B600AB41D7 /* sfx_wing.caf */,
+				00BE9EB51C53C5B600AB41D7 /* sfx_swoosh.caf */,
+				00BE9EB61C53C5B600AB41D7 /* sfx_point.caf */,
+				00BE9EB71C53C5B600AB41D7 /* sfx_hit.caf */,
+				00BE9EB81C53C5B600AB41D7 /* sfx_die.caf */,
 			);
 			name = sfx;
 			sourceTree = "<group>";
@@ -263,15 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				00720EB11C30322D00F9C0B0 /* img in Resources */,
+				00BE9EB91C53C5B600AB41D7 /* sfx_wing.caf in Resources */,
 				00720E7F1C2F13E400F9C0B0 /* GameScene.sks in Resources */,
 				00720E8B1C2F13E400F9C0B0 /* LaunchScreen.storyboard in Resources */,
-				00BE9EB11C53C3D900AB41D7 /* sfx_point.wav in Resources */,
-				00BE9EB21C53C3D900AB41D7 /* sfx_swooshing.wav in Resources */,
+				00BE9EBA1C53C5B600AB41D7 /* sfx_swoosh.caf in Resources */,
 				00720E881C2F13E400F9C0B0 /* Assets.xcassets in Resources */,
-				00BE9EB01C53C3D900AB41D7 /* sfx_hit.wav in Resources */,
 				00720E861C2F13E400F9C0B0 /* Main.storyboard in Resources */,
-				00BE9EAF1C53C3D900AB41D7 /* sfx_die.wav in Resources */,
-				00BE9EB31C53C3D900AB41D7 /* sfx_wing.wav in Resources */,
+				00BE9EBB1C53C5B600AB41D7 /* sfx_point.caf in Resources */,
+				00BE9EBC1C53C5B600AB41D7 /* sfx_hit.caf in Resources */,
+				00BE9EBD1C53C5B600AB41D7 /* sfx_die.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,11 +20,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel = SKLabelNode()
     var gameOverLabel = SKLabelNode()
     var labelContainer = SKLabelNode()
-    let wingSFX = SKAction.playSoundFileNamed("sfx_wing.wav", waitForCompletion: false)
-    let dieSFX = SKAction.playSoundFileNamed("sfx_die.wav", waitForCompletion: false)
-    let swooshSFX = SKAction.playSoundFileNamed("sfx_swooshing.wav", waitForCompletion: false)
-    let hitSFX = SKAction.playSoundFileNamed("sfx_hit.wav", waitForCompletion: false)
-    let pointSFX = SKAction.playSoundFileNamed("sfx_point.wav", waitForCompletion: false)
+    let wingSFX = SKAction.playSoundFileNamed("sfx_wing.caf", waitForCompletion: false)
+    let dieSFX = SKAction.playSoundFileNamed("sfx_die.caf", waitForCompletion: false)
+    let swooshSFX = SKAction.playSoundFileNamed("sfx_swoosh.caf", waitForCompletion: false)
+    let hitSFX = SKAction.playSoundFileNamed("sfx_hit.caf", waitForCompletion: false)
+    let pointSFX = SKAction.playSoundFileNamed("sfx_point.caf", waitForCompletion: false)
     
     enum ColliderType : UInt32 {
         
