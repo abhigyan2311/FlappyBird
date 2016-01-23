@@ -17,6 +17,11 @@
 		00720E961C2F13E400F9C0B0 /* FlappyBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00720E951C2F13E400F9C0B0 /* FlappyBirdTests.swift */; };
 		00720EA11C2F13E400F9C0B0 /* FlappyBirdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00720EA01C2F13E400F9C0B0 /* FlappyBirdUITests.swift */; };
 		00720EB11C30322D00F9C0B0 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 00720EB01C30322D00F9C0B0 /* img */; };
+		00BE9EAF1C53C3D900AB41D7 /* sfx_die.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAA1C53C3D900AB41D7 /* sfx_die.wav */; };
+		00BE9EB01C53C3D900AB41D7 /* sfx_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAB1C53C3D900AB41D7 /* sfx_hit.wav */; };
+		00BE9EB11C53C3D900AB41D7 /* sfx_point.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAC1C53C3D900AB41D7 /* sfx_point.wav */; };
+		00BE9EB21C53C3D900AB41D7 /* sfx_swooshing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAD1C53C3D900AB41D7 /* sfx_swooshing.wav */; };
+		00BE9EB31C53C3D900AB41D7 /* sfx_wing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00BE9EAE1C53C3D900AB41D7 /* sfx_wing.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		00720EA01C2F13E400F9C0B0 /* FlappyBirdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyBirdUITests.swift; sourceTree = "<group>"; };
 		00720EA21C2F13E400F9C0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00720EB01C30322D00F9C0B0 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		00BE9EAA1C53C3D900AB41D7 /* sfx_die.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_die.wav; sourceTree = "<group>"; };
+		00BE9EAB1C53C3D900AB41D7 /* sfx_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_hit.wav; sourceTree = "<group>"; };
+		00BE9EAC1C53C3D900AB41D7 /* sfx_point.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_point.wav; sourceTree = "<group>"; };
+		00BE9EAD1C53C3D900AB41D7 /* sfx_swooshing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_swooshing.wav; sourceTree = "<group>"; };
+		00BE9EAE1C53C3D900AB41D7 /* sfx_wing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_wing.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 		00720E701C2F13E400F9C0B0 = {
 			isa = PBXGroup;
 			children = (
+				00BE9E9F1C53C08D00AB41D7 /* sfx */,
 				00720EB01C30322D00F9C0B0 /* img */,
 				00720E7B1C2F13E400F9C0B0 /* FlappyBird */,
 				00720E941C2F13E400F9C0B0 /* FlappyBirdTests */,
@@ -132,6 +143,18 @@
 				00720EA21C2F13E400F9C0B0 /* Info.plist */,
 			);
 			path = FlappyBirdUITests;
+			sourceTree = "<group>";
+		};
+		00BE9E9F1C53C08D00AB41D7 /* sfx */ = {
+			isa = PBXGroup;
+			children = (
+				00BE9EAA1C53C3D900AB41D7 /* sfx_die.wav */,
+				00BE9EAB1C53C3D900AB41D7 /* sfx_hit.wav */,
+				00BE9EAC1C53C3D900AB41D7 /* sfx_point.wav */,
+				00BE9EAD1C53C3D900AB41D7 /* sfx_swooshing.wav */,
+				00BE9EAE1C53C3D900AB41D7 /* sfx_wing.wav */,
+			);
+			name = sfx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +265,13 @@
 				00720EB11C30322D00F9C0B0 /* img in Resources */,
 				00720E7F1C2F13E400F9C0B0 /* GameScene.sks in Resources */,
 				00720E8B1C2F13E400F9C0B0 /* LaunchScreen.storyboard in Resources */,
+				00BE9EB11C53C3D900AB41D7 /* sfx_point.wav in Resources */,
+				00BE9EB21C53C3D900AB41D7 /* sfx_swooshing.wav in Resources */,
 				00720E881C2F13E400F9C0B0 /* Assets.xcassets in Resources */,
+				00BE9EB01C53C3D900AB41D7 /* sfx_hit.wav in Resources */,
 				00720E861C2F13E400F9C0B0 /* Main.storyboard in Resources */,
+				00BE9EAF1C53C3D900AB41D7 /* sfx_die.wav in Resources */,
+				00BE9EB31C53C3D900AB41D7 /* sfx_wing.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FlappyBird/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itweax.FlappyBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,6 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FlappyBird/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itweax.FlappyBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
