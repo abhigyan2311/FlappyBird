@@ -16,10 +16,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var pipe2 = SKSpriteNode()
     var movingObjects = SKSpriteNode()
     var gameOver = false
-    var score = 0
     var scoreLabel = SKLabelNode()
+    var highScoreLabel = SKLabelNode()
     var gameOverLabel = SKLabelNode()
     var labelContainer = SKLabelNode()
+    var score = 0
+    var savedScore = 0
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    //SFX
     let wingSFX = SKAction.playSoundFileNamed("sfx_wing.caf", waitForCompletion: false)
     let dieSFX = SKAction.playSoundFileNamed("sfx_die.caf", waitForCompletion: false)
     let swooshSFX = SKAction.playSoundFileNamed("sfx_swoosh.caf", waitForCompletion: false)
@@ -27,24 +32,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let pointSFX = SKAction.playSoundFileNamed("sfx_point.caf", waitForCompletion: false)
     
     enum ColliderType : UInt32 {
-        
         case Bird = 1
         case Object = 2
         case Gap = 4
-        
     }
     
     override func didMoveToView(view: SKView) {
         
+        if let highscore = userDefaults.valueForKey("HighScore") {
+            savedScore = userDefaults.objectForKey("HighScore") as! Int
+        }
+        else{
+            userDefaults.setValue(0, forKey: "HighScore")
+        }
         self.physicsWorld.contactDelegate = self
         self.addChild(movingObjects)
         self.addChild(labelContainer)
         
-        scoreLabel.fontName = "Helvetica"
+        scoreLabel.fontName = "Helvetica-Bold"
         scoreLabel.fontSize = 60
         scoreLabel.text = "0"
         scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 70)
         self.addChild(scoreLabel)
+        
+        highScoreLabel.fontName = "Helvetica"
+        highScoreLabel.fontSize = 30
+        highScoreLabel.text = "High Score : \(savedScore)"
+        highScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+        self.addChild(highScoreLabel)
         
         makeBg()
         makeBird()
@@ -107,8 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.width/100))
         let removePipes = SKAction.removeFromParent()
         let moveAndRemovePipes = SKAction.sequence([movePipes,removePipes])
-        
-        //Pipe
+
         let pipeTexture1 = SKTexture(imageNamed: "img/pipe1.png")
         let pipe1 = SKSpriteNode(texture: pipeTexture1)
         pipe1.position = CGPointMake(CGRectGetMidX(self.frame) + self.frame.size.width, CGRectGetMidY(self.frame) + pipeTexture1.size().height/2 + gapHeight/2 + pipeOffset)
@@ -148,6 +162,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             score++
             scoreLabel.text = String(score)
             runAction(pointSFX)
+            if (score > savedScore){
+                savedScore = score
+                userDefaults.setObject(score, forKey:"HighScore")
+                userDefaults.synchronize()
+                highScoreLabel.text = "High Score : \(savedScore)"
+            }
         }
         else {
             if (gameOver == false) {
@@ -156,9 +176,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 runAction(swooshSFX)
                 gameOver = true
                 self.speed = 0
-                gameOverLabel.fontName = "Helvetica"
-                gameOverLabel.fontSize = 30
-                gameOverLabel.text = "Game Over! Tap to play again."
+                gameOverLabel.fontName = "Helvetica-Bold"
+                gameOverLabel.fontSize = 40
+                gameOverLabel.text = "Game Over!"
                 gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
                 labelContainer.addChild(gameOverLabel)
             }
@@ -166,7 +186,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    
         if (gameOver == false) {
             bird.physicsBody!.velocity = CGVectorMake(0, 0)
             bird.physicsBody!.applyImpulse(CGVectorMake(0, 80))
@@ -183,10 +202,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.speed = 1
             gameOver = false
             labelContainer.removeAllChildren()
-            
-            
         }
-        
     }
    
     override func update(currentTime: CFTimeInterval) {
